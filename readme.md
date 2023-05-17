@@ -26,3 +26,6 @@ cd {paste-the-server-directory-path-here}
 npm install
 npm run server
 ```
+
+### Note
+The actual feature add-on for this submission is pulling some of the data from the ghsecure APIs, and displaying the data in the new "GithubURLPage" and "GithubUserDataPage" pages.
