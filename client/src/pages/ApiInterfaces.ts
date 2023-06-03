@@ -10,6 +10,10 @@ export interface RepoInfoApiInterface {
     CreatedDate: string
 }
 
+export interface WeatherAppInterface {
+    Name: string
+}
+
 export interface URLApiInterface {
     current_user_url: string,
     authorizations_url: string,

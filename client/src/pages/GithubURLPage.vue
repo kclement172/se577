@@ -23,11 +23,11 @@
   </div>
 </template>
   
-  <script lang="ts">
-  export default {
-    name: 'GithubURLPage',
-  };
-  </script>
+<script lang="ts">
+export default {
+  name: 'GithubURLPage',
+};
+</script>
   
   <script setup lang="ts">
 import { onMounted, ref } from 'vue';

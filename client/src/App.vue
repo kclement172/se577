@@ -5,6 +5,7 @@ import HelloWorld from './components/HelloWorld.vue'
 import FirstPage from './pages/RepoInfo.vue'
 import GithubURLPage from './pages/GithubURLPage.vue'
 import GithubUserDataPage from './pages/GithubUserDataPage.vue'
+import WeatherAppPage from './pages/WeatherAppPage.vue'
 
 </script>
 
@@ -17,6 +18,7 @@ import GithubUserDataPage from './pages/GithubUserDataPage.vue'
         <RouterLink to="/repoinfo">Repository Info</RouterLink>
         <RouterLink to="/urlinfo">Github URL Info</RouterLink>
         <RouterLink to="/userdata">Github User Data</RouterLink>
+        <RouterLink to="/weather">Weather App</RouterLink>
       </nav>
       <hr/>
   </header>

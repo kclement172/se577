@@ -31,6 +31,11 @@ const router = createRouter({
       path: '/userdata',
       name: 'GithubUserDataPage',
       component: () => import('../pages/GithubUserDataPage.vue')
+    },
+    {
+      path: '/weather',
+      name: 'WeatherAppPage',
+      component: () => import('../pages/WeatherAppPage.vue')
     }
   ]
 })

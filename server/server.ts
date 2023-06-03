@@ -3,7 +3,7 @@ import fastify, {RequestGenericInterface} from "fastify";
 import fastifyHttpProxy from "@fastify/http-proxy";
 import dotenv from 'dotenv';
 
-import {GetGHProxySecureOptions, GetGHProxyOptions } from "./proxy";
+import {GetGHProxySecureOptions, GetGHProxyOptions, GetOpenWeatherSecureOptions, GetOpenWeatherProxyOptions } from "./proxy";
 
 import cors from '@fastify/cors';
 
@@ -19,6 +19,12 @@ server.register(fastifyHttpProxy, proxyOptsSecure)
 
 let proxyOpts = GetGHProxyOptions()
 server.register(fastifyHttpProxy, proxyOpts)
+
+let weatherOptsSecure = GetOpenWeatherSecureOptions(process.env.OPEN_WEATHER_API_ACCESS_TOKEN)
+server.register(fastifyHttpProxy, weatherOptsSecure)
+
+let weatherProxyOpts = GetOpenWeatherProxyOptions()
+server.register(fastifyHttpProxy, weatherProxyOpts)
 
 // setup CORS - this will be necessary for API requests from a VUE or any SPA app 
 // Not quite necessary for the project
