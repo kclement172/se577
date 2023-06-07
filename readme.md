@@ -18,6 +18,7 @@ Enter the following commands in order:
 cd {paste-the-client-directory-path-here}
 npm install
 npm run dev
+Note: I noticed when cloning the project that there was a security vulnerability found when installing the client. The open weather map API was also not working initially. However, running 'npm audit fix' addressed the issue, and got the app working again. 
 ```
 
 ### Running The Server
