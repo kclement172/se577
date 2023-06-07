@@ -31,4 +31,7 @@ npm run server
 ```
 
 ### Note
-The actual feature add-on for this submission is pulling some of the data from the ghsecure APIs, and displaying the data in the new "GithubURLPage" and "GithubUserDataPage" pages.
+The actual feature add-on for this submission includes:
+1. A weatherapp that displays the current weather, and weather descriptions, of my home town of "Cinnaminson, NJ"
+2. A calculator that runs in the browser
+3. A png file that contains the C4 diagram of the project software architecture
