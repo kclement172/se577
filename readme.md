@@ -33,9 +33,11 @@ npm run server
 
 ### Note
 The actual feature add-on for this submission includes:
-1. A weatherapp that displays the current weather, and weather descriptions, of my home town of "Cinnaminson, NJ"
-2. A calculator that runs in the browser
-3. A png file that contains the C4 diagram of the project software architecture
+1. All updates to the project up to this point
+2. A weatherapp that displays the current weather, and weather descriptions, of my home town of "Cinnaminson, NJ"
+3. A calculator that runs in the browser
+4. A pdf file that contains the C4 diagram of the project software architecture
+5. The Architecture Description below
 
 ### Architecture Description
 1. Please see "SE 577 Final Project Diagram" for the PDF of the model of my Final Project.
