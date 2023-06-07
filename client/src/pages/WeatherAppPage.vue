@@ -1,17 +1,17 @@
 <template>
-    <div id = "app">
+    <div id = "weather-app">
       <main>    
 
         <div class="weather-wrap">
-          <div class="location-box">
-             <div class="location">Cinaminson, NJ</div>              
-             <div class="date">Saturday 3 June 2023</div>
+          <div class="location-section">
+             <div class="city">{{urlData?.name}}, NJ</div>              
+             <div class="date-and-time">{{Date()}}</div>
           </div>
 
-          <div class="weather-box">
-            <div class="temp">76 F</div>
-            <div class="weather">Sunny</div>
-            <div class="city">{{urlData?.Name}}</div>
+          <div class="weather-section">
+            <div class="temperature">{{urlData?.main.temp}} F</div>
+            <div class="weather">{{urlData?.weather[0].main}}</div>
+            <div class="weather-description">{{urlData?.weather[0].description}}</div>
           </div>
 
         </div>
@@ -39,7 +39,8 @@ import axios from 'axios';
     console.log("Page 4 mounted")
 
     //this is where to go and get the user data
-    let weatherDataURI = 'http://localhost:9500/weathersecure'
+    let weatherDataURI = 'http://localhost:9500/weathersecure/weather?q=cinnaminson&units=imperial'
+    // http://localhost:9500/weathersecure/weather?q=cinnaminson&units=imperial
 
     //Use axios to load the user data - readup on await to make
     //async calls easier
@@ -67,11 +68,10 @@ import axios from 'axios';
     font-family: 'montserrat', sans-serif;
   }
 
-  #app {
-    background-image: url('../assets/cold-bg.jpg');
+  #weather-app {
+    background-image: url('../assets/town.jpg');
     background-size: cover;
     background-position: bottom;
-    transition: 0.4s;
   }
 
   main {
@@ -81,37 +81,7 @@ import axios from 'axios';
     background-image: linear-gradient(to bottom, rgba(0, 0, 0, 0.25), rgba(0, 0, 0, 0.75));
   }
 
-  .search-box {
-    width: 100%;
-    margin-bottom: 30px;
-  }
-
-  .search-box .search-bar {
-    display: block;
-    width: 100%;
-    padding: 15px;
-
-    color: #313131;
-    font-size: 20px;
-    
-    appearance: none;
-    border: none;
-    outline: none;
-    background: none;
-
-    box-shadow: 0px 0px 8px rgba(0, 0, 0, 0.25);
-    background-color: rgba(255, 255, 255, 0.5);
-    border-radius: 0px 16px 0px 16px;
-    transition: 0.4s;
-  }
-
-  .search-box .search-bar:focus{
-    box-shadow: 0px 0px 16px rgba(0, 0, 0, 0.25);
-    background-color: rgba(255, 255, 2555, 0.75);
-    border-radius: 16px 0px 16px 0px;
-  }
-
-  .location-box .location{
+  .location-section .city{
     color: #FFF;
     font-size: 32px;
     font-weight: 500;
@@ -119,7 +89,7 @@ import axios from 'axios';
     text-shadow: 1px 3px rgba(0, 0, 0, 0.25);
   }
 
-  .location-box .date {
+  .location-section .date-and-time {
     color: #FFF;
     font-size: 20px;
     font-weight: 300;
@@ -127,11 +97,11 @@ import axios from 'axios';
     font-style: italic;
   }
 
-  .weather-box {
+  .weather-section {
     text-align: center;
   }
 
-  .weather-box .temp{
+  .weather-section .temperature{
     display: inline-block;
     padding: 10px 25px;
     color: #FFF;
@@ -146,12 +116,21 @@ import axios from 'axios';
     box-shadow: 3px 6px rgba(0, 0, 0, 0.25);
   }
 
-  .weather-box .weather{
+  .weather-section .weather{
     color: #FFF;
-    font-size:48;
+    font-size: 48px;
     font-weight: 700;
     font-style: italic;
     text-shadow: 3px 6px rgba(0, 0, 0, 0.25);
   }
+
+  .weather-section .weather-description{
+    color: #FFF;
+    font-size: 32px;
+    font-weight: 700;
+    font-style: italic;
+    text-shadow: 3px 6px rgba(0, 0, 0, 0.25);
+  }
+
   </style>
   

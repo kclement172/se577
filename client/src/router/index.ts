@@ -36,6 +36,11 @@ const router = createRouter({
       path: '/weather',
       name: 'WeatherAppPage',
       component: () => import('../pages/WeatherAppPage.vue')
+    },
+    {
+      path: '/calculator',
+      name: 'CalculatorAppPage',
+      component: () => import('../pages/CalculatorAppPage.vue')
     }
   ]
 })

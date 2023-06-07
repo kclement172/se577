@@ -11,7 +11,16 @@ export interface RepoInfoApiInterface {
 }
 
 export interface WeatherAppInterface {
-    Name: string
+    name: string,
+    main: {
+        temp: number
+    },
+    weather: [
+        weatherObject: {
+            main: string,
+            description: string
+        }
+    ]
 }
 
 export interface URLApiInterface {

@@ -6,6 +6,7 @@ import FirstPage from './pages/RepoInfo.vue'
 import GithubURLPage from './pages/GithubURLPage.vue'
 import GithubUserDataPage from './pages/GithubUserDataPage.vue'
 import WeatherAppPage from './pages/WeatherAppPage.vue'
+import CalculatorAppPage from './pages/CalculatorAppPage.vue'
 
 </script>
 
@@ -19,6 +20,7 @@ import WeatherAppPage from './pages/WeatherAppPage.vue'
         <RouterLink to="/urlinfo">Github URL Info</RouterLink>
         <RouterLink to="/userdata">Github User Data</RouterLink>
         <RouterLink to="/weather">Weather App</RouterLink>
+        <RouterLink to="/calculator">Calculator</RouterLink>
       </nav>
       <hr/>
   </header>

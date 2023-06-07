@@ -29,28 +29,36 @@ export function GetGHProxyOptions() : FastifyHttpProxyOptions {
 // Configuration is driven from Server.Ts
 export function GetOpenWeatherSecureOptions(OPEN_WEATHER_API_ACCESS_TOKEN: string | undefined) : FastifyHttpProxyOptions {
     return {
-        upstream: 'https://api.openweathermap.org/data/2.5/weather?q=Cinnaminson,US-NJ&units=imperial',
-        prefix: 'weathersecure', 
+        upstream: 'https://api.openweathermap.org/data/2.5',
+        prefix: 'weathersecure',
         httpMethods: ['GET', 'POST'],
         replyOptions: {
-            rewriteRequestHeaders: (origReq, headers) => {
-                return {
-                    ...headers,
-                    authorization: `Bearer ${OPEN_WEATHER_API_ACCESS_TOKEN}`
-                }
-            } 
-        } 
+            queryString(search, reqUrl) {
+
+                //first, lets setup the authtoken query string value
+                const authQs = `&appid=${OPEN_WEATHER_API_ACCESS_TOKEN}`
+
+                //now lets split the URL and get only the stuff to the
+                //right of the ?
+                let [,qs] = reqUrl.split("?")
+
+                //2 options, there were no parameters, or we need to add
+                //our parameter to the list
+                if(qs)
+                    qs = `${qs}&${authQs}`  //other query parameters existed
+                else
+                    qs = `${authQs}`         //this is the only one
+
+                return qs
+            }
+        }
     }
 }
 
-// Adds the authorization header to the token, and that's what makes it work
 export function GetOpenWeatherProxyOptions() : FastifyHttpProxyOptions {
     return {
-        upstream: 'https://api.openweathermap.org/data/2.5/weather?q=Cinnaminson,US-NJ&units=imperial',
+        upstream: 'https://api.openweathermap.org/data/2.5',
         prefix: 'weatherproxy', 
         httpMethods: ['GET', 'POST']
     }
 }
-
-
-
